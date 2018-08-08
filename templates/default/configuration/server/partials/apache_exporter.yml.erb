@@ -1,0 +1,19 @@
+<% apache_exporters = @server_groups.select { |sg| sg.type == :apache_exporter }.map { |sg| sg.servers }.flatten %>
+
+<% unless apache_exporters.nil? || apache_exporters.empty? %>
+  - job_name: 'apache_exporter'
+    static_configs:
+      - targets:
+  <% apache_exporters.each do |exporter| %>
+        - <%= exporter.location %>
+  <% end %>
+    relabel_configs:
+      - source_labels: [ __address__ ]
+        target_label: address
+  <% apache_exporters.each do |exporter| %>
+      - source_labels: [ __address__ ]
+        target_label: instance
+        regex: <%= exporter.location %>
+        replacement: <%= exporter.instance %>
+  <% end %>
+<% end %>

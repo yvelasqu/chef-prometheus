@@ -1,0 +1,23 @@
+<% servers = @server_groups.select { |sg| sg.type == :cadvisor }.map { |sg| sg.servers }.flatten %>
+
+<% unless servers.nil? || servers.empty? %>
+  - job_name: 'cadvisor'
+    static_configs:
+    - targets:
+  <% servers.each do |exporter| %>
+        - <%= exporter.location %>
+  <% end %>
+    relabel_configs:
+      - source_labels: [ __address__ ]
+        target_label: address
+      - source_labels: [ __address__ ]
+        target_label: datacenter
+        regex: .*
+        replacement: <%= @datacenter %>
+  <% servers.each do |exporter| %>
+      - source_labels: [ __address__ ]
+        target_label: instance
+        regex: <%= exporter.location %>
+        replacement: <%= exporter.instance %>
+  <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+DEPENDENCIES
+  chef-prometheus
+    path: .
+    metadata: true
+
+GRAPH
+  chef-prometheus (1.0.147)
+    logrotate (>= 0.0.0)
+    ulimit (>= 0.4.0)
+  logrotate (1.9.2)
+  ulimit (0.4.0)

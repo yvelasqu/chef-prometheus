@@ -1,0 +1,13 @@
+groups:
+- name: ExampleAlerts
+  rules:
+  - alert: ServerDown
+    expr: up{job="node_exporter"} == 0
+    for: 5m
+    labels:
+      severity: critical
+      pager: slack
+      routing_key: testtest
+    annotations:
+      description: "Node {{ $labels.instance}} is down for the past 5 minutes."
+      title: "Node {{ $labels.instance}} is down for the past 5 minutes."

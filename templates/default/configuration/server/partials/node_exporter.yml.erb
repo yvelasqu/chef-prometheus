@@ -1,0 +1,19 @@
+<% node_exporters = @server_groups.select { |sg| sg.type == :node_exporter }.map { |sg| sg.servers }.flatten %>
+
+<% unless node_exporters.nil? || node_exporters.empty? %>
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets:
+  <% node_exporters.each do |exporter| %>
+        - <%= exporter.location %>
+  <% end %>
+    relabel_configs:
+      - source_labels: [ __address__ ]
+        target_label: address
+  <% node_exporters.each do |exporter| %>
+      - source_labels: [ __address__ ]
+        target_label: instance
+        regex: <%= exporter.location %>
+        replacement: <%= exporter.instance %>
+  <% end %>
+<% end %>

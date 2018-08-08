@@ -1,0 +1,11 @@
+  - job_name: 'prometheus'
+    static_configs:
+      - targets:
+        - 'localhost:9090'
+    relabel_configs:
+      - source_labels: [ __address__ ]
+        target_label: address
+      - source_labels: [ __address__ ]
+        target_label: instance
+        regex: 'localhost:9090'
+        replacement: <%= node['hostname'] %>

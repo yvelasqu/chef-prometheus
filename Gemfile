@@ -1,0 +1,13 @@
+source 'https://rubygems.org'
+
+gem 'berkshelf', '~>5.6.5'
+gem 'chef', '12.18.31'
+gem 'chef-vault', '~>3.2.0'
+gem 'chef-zero', '~>5.3.2'
+gem 'chefspec', '~>5.4.0'
+gem 'chefspec-coveragereports', '0.0.2'
+gem 'foodcritic', '~>9.0.0'
+gem 'rake'
+gem 'rubocop', '~>0.47.1'
+gem 'rubocop-checkstyle_formatter', '~>0.3.0'
+gem 'nokogiri', '~>1.8.1'

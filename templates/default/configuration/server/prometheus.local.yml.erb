@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 60s
+  scrape_timeout: 30s
+  evaluation_interval: 60s
+
+
+scrape_configs:
+<%= render 'configuration/server/partials/self_monitoring.yml.erb' %>
+<%= render 'configuration/server/partials/apache_exporter.yml.erb', variables: { server_groups: @server_groups } %>
+<%= render 'configuration/server/partials/cadvisor.yml.erb', variables: { server_groups: @server_groups, datacenter: @datacenter } %>
+<%= render 'configuration/server/partials/node_exporter.yml.erb', variables: { server_groups: @server_groups } %>

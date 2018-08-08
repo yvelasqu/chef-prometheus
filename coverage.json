@@ -1,0 +1,1004 @@
+{
+  "files": {
+    "chef-prometheus/recipes/alertmanager.rb": {
+      "directory[/opt/prometheus/alertmanager]": {
+        "name": "directory[/opt/prometheus/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/opt/prometheus/alertmanager/data]": {
+        "name": "directory[/opt/prometheus/alertmanager/data]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 12,
+        "covered": true
+      },
+      "directory[/var/log/alertmanager]": {
+        "name": "directory[/var/log/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 19,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-scg0gy/alertmanager-0.14.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-scg0gy/alertmanager-0.14.0.tar.gz]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 34,
+        "covered": true
+      },
+      "execute[install_alertmanager]": {
+        "name": "execute[install_alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 42,
+        "covered": false
+      },
+      "template[/opt/prometheus/alertmanager/config.yml]": {
+        "name": "template[/opt/prometheus/alertmanager/config.yml]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 51,
+        "covered": true
+      },
+      "template[/etc/init.d/alertmanager]": {
+        "name": "template[/etc/init.d/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 62,
+        "covered": true
+      },
+      "service[alertmanager]": {
+        "name": "service[alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 70,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1p4smxu/alertmanager-0.14.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1p4smxu/alertmanager-0.14.0.tar.gz]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 34,
+        "covered": true
+      }
+    },
+    "chef-prometheus/recipes/apache_exporter.rb": {
+      "directory[/opt/prometheus/apache_exporter]": {
+        "name": "directory[/opt/prometheus/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/var/log/apache_exporter]": {
+        "name": "directory[/var/log/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 12,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-11aovc2/apache_exporter-0.5.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-11aovc2/apache_exporter-0.5.0.tar.gz]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 27,
+        "covered": true
+      },
+      "execute[install_apache_exporter]": {
+        "name": "execute[install_apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 35,
+        "covered": false
+      },
+      "template[/etc/init.d/apache_exporter]": {
+        "name": "template[/etc/init.d/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 44,
+        "covered": true
+      },
+      "service[apache_exporter]": {
+        "name": "service[apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 52,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-141cxgp/apache_exporter-0.5.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-141cxgp/apache_exporter-0.5.0.tar.gz]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 27,
+        "covered": true
+      }
+    },
+    "chef-prometheus/recipes/configure_postgresql_adapter.rb": {
+      "directory[/var/log/postgresql_adapter]": {
+        "name": "directory[/var/log/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 6,
+        "covered": true
+      },
+      "cookbook_file[/opt/prometheus/database/postgresql_adapter]": {
+        "name": "cookbook_file[/opt/prometheus/database/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 21,
+        "covered": true
+      },
+      "template[/etc/init.d/postgresql_adapter]": {
+        "name": "template[/etc/init.d/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 30,
+        "covered": true
+      },
+      "service[postgresql_adapter]": {
+        "name": "service[postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 41,
+        "covered": true
+      }
+    },
+    "chef-prometheus/recipes/configure_postgresql_extension.rb": {
+      "remote_file[/tmp/d20180808-12777-1fgt4lc/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1fgt4lc/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "yum_package[postgresql10-devel, gcc]": {
+        "name": "yum_package[postgresql10-devel, gcc]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 15,
+        "covered": true
+      },
+      "execute[uncompress_extension]": {
+        "name": "execute[uncompress_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 21,
+        "covered": true
+      },
+      "bash[make_extension]": {
+        "name": "bash[make_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 31,
+        "covered": true
+      },
+      "execute[install_extension]": {
+        "name": "execute[install_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 45,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-exkzf7/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-exkzf7/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-rp9wu8/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-rp9wu8/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": false
+      }
+    },
+    "chef-prometheus/recipes/database.rb": {
+      "directory[/opt/prometheus/database]": {
+        "name": "directory[/opt/prometheus/database]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 6,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-rp9wu8/postgresql-10.3.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-rp9wu8/postgresql-10.3.rpm]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 15,
+        "covered": true
+      },
+      "rpm_package[postgresql10-server]": {
+        "name": "rpm_package[postgresql10-server]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 22,
+        "covered": true
+      },
+      "yum_package[postgresql10-server]": {
+        "name": "yum_package[postgresql10-server]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 28,
+        "covered": true
+      },
+      "execute[setup_postgresql]": {
+        "name": "execute[setup_postgresql]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 34,
+        "covered": true
+      },
+      "execute[create_prometheus_user]": {
+        "name": "execute[create_prometheus_user]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 43,
+        "covered": true
+      },
+      "template[/var/lib/pgsql/10/data/pg_hba.conf]": {
+        "name": "template[/var/lib/pgsql/10/data/pg_hba.conf]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 54,
+        "covered": false
+      },
+      "template[/var/lib/pgsql/10/data/postgresql.conf]": {
+        "name": "template[/var/lib/pgsql/10/data/postgresql.conf]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 63,
+        "covered": true
+      },
+      "execute[create_database_prometheus]": {
+        "name": "execute[create_database_prometheus]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 74,
+        "covered": false
+      },
+      "service[postgresql-10]": {
+        "name": "service[postgresql-10]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 93,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/postgresql-10.3.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/postgresql-10.3.rpm]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 15,
+        "covered": true
+      }
+    },
+    "chef-prometheus/recipes/timescaledb.rb": {
+      "remote_file[/tmp/d20180808-12777-va5jp7/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": false
+      },
+      "rpm_package[timescaledb]": {
+        "name": "rpm_package[timescaledb]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 14,
+        "covered": true
+      },
+      "yum_package[timescaledb]": {
+        "name": "yum_package[timescaledb]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 21,
+        "covered": true
+      },
+      "execute[create_timescale_extension]": {
+        "name": "execute[create_timescale_extension]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 39,
+        "covered": true
+      },
+      "execute[restart_postgresql]": {
+        "name": "execute[restart_postgresql]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 47,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-dmjqc/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-dmjqc/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1i6wxyt/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-1i6wxyt/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": true
+      }
+    },
+    "chef-prometheus/recipes/node_exporter.rb": {
+      "directory[/opt/prometheus/node_exporter]": {
+        "name": "directory[/opt/prometheus/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/var/log/node_exporter]": {
+        "name": "directory[/var/log/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 12,
+        "covered": true
+      },
+      "yum_package[glibc-static]": {
+        "name": "yum_package[glibc-static]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 25,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-8oyis7/node_exporter-0.15.2.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-8oyis7/node_exporter-0.15.2.tar.gz]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 31,
+        "covered": true
+      },
+      "execute[install_node_exporter]": {
+        "name": "execute[install_node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 39,
+        "covered": false
+      },
+      "template[/etc/init.d/node_exporter]": {
+        "name": "template[/etc/init.d/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 48,
+        "covered": true
+      },
+      "service[node_exporter]": {
+        "name": "service[node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 56,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1omm4dy/node_exporter-0.15.2.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1omm4dy/node_exporter-0.15.2.tar.gz]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 31,
+        "covered": true
+      }
+    }
+  },
+  "resources": {
+    "all": {
+      "directory[/opt/prometheus/alertmanager]": {
+        "name": "directory[/opt/prometheus/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/opt/prometheus/alertmanager/data]": {
+        "name": "directory[/opt/prometheus/alertmanager/data]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 12,
+        "covered": true
+      },
+      "directory[/var/log/alertmanager]": {
+        "name": "directory[/var/log/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 19,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-scg0gy/alertmanager-0.14.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-scg0gy/alertmanager-0.14.0.tar.gz]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 34,
+        "covered": true
+      },
+      "execute[install_alertmanager]": {
+        "name": "execute[install_alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 42,
+        "covered": false
+      },
+      "template[/opt/prometheus/alertmanager/config.yml]": {
+        "name": "template[/opt/prometheus/alertmanager/config.yml]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 51,
+        "covered": true
+      },
+      "template[/etc/init.d/alertmanager]": {
+        "name": "template[/etc/init.d/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 62,
+        "covered": true
+      },
+      "service[alertmanager]": {
+        "name": "service[alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 70,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1p4smxu/alertmanager-0.14.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1p4smxu/alertmanager-0.14.0.tar.gz]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 34,
+        "covered": true
+      },
+      "directory[/opt/prometheus/apache_exporter]": {
+        "name": "directory[/opt/prometheus/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/var/log/apache_exporter]": {
+        "name": "directory[/var/log/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 12,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-11aovc2/apache_exporter-0.5.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-11aovc2/apache_exporter-0.5.0.tar.gz]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 27,
+        "covered": true
+      },
+      "execute[install_apache_exporter]": {
+        "name": "execute[install_apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 35,
+        "covered": false
+      },
+      "template[/etc/init.d/apache_exporter]": {
+        "name": "template[/etc/init.d/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 44,
+        "covered": true
+      },
+      "service[apache_exporter]": {
+        "name": "service[apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 52,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-141cxgp/apache_exporter-0.5.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-141cxgp/apache_exporter-0.5.0.tar.gz]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 27,
+        "covered": true
+      },
+      "directory[/var/log/postgresql_adapter]": {
+        "name": "directory[/var/log/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 6,
+        "covered": true
+      },
+      "cookbook_file[/opt/prometheus/database/postgresql_adapter]": {
+        "name": "cookbook_file[/opt/prometheus/database/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 21,
+        "covered": true
+      },
+      "template[/etc/init.d/postgresql_adapter]": {
+        "name": "template[/etc/init.d/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 30,
+        "covered": true
+      },
+      "service[postgresql_adapter]": {
+        "name": "service[postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 41,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1fgt4lc/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1fgt4lc/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "yum_package[postgresql10-devel, gcc]": {
+        "name": "yum_package[postgresql10-devel, gcc]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 15,
+        "covered": true
+      },
+      "execute[uncompress_extension]": {
+        "name": "execute[uncompress_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 21,
+        "covered": true
+      },
+      "bash[make_extension]": {
+        "name": "bash[make_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 31,
+        "covered": true
+      },
+      "execute[install_extension]": {
+        "name": "execute[install_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 45,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-exkzf7/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-exkzf7/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "directory[/opt/prometheus/database]": {
+        "name": "directory[/opt/prometheus/database]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 6,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-rp9wu8/postgresql-10.3.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-rp9wu8/postgresql-10.3.rpm]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 15,
+        "covered": true
+      },
+      "rpm_package[postgresql10-server]": {
+        "name": "rpm_package[postgresql10-server]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 22,
+        "covered": true
+      },
+      "yum_package[postgresql10-server]": {
+        "name": "yum_package[postgresql10-server]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 28,
+        "covered": true
+      },
+      "execute[setup_postgresql]": {
+        "name": "execute[setup_postgresql]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 34,
+        "covered": true
+      },
+      "execute[create_prometheus_user]": {
+        "name": "execute[create_prometheus_user]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 43,
+        "covered": true
+      },
+      "template[/var/lib/pgsql/10/data/pg_hba.conf]": {
+        "name": "template[/var/lib/pgsql/10/data/pg_hba.conf]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 54,
+        "covered": false
+      },
+      "template[/var/lib/pgsql/10/data/postgresql.conf]": {
+        "name": "template[/var/lib/pgsql/10/data/postgresql.conf]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 63,
+        "covered": true
+      },
+      "execute[create_database_prometheus]": {
+        "name": "execute[create_database_prometheus]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 74,
+        "covered": false
+      },
+      "remote_file[/tmp/d20180808-12777-rp9wu8/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-rp9wu8/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "service[postgresql-10]": {
+        "name": "service[postgresql-10]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 93,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/postgresql-10.3.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/postgresql-10.3.rpm]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 15,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": false
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": false
+      },
+      "rpm_package[timescaledb]": {
+        "name": "rpm_package[timescaledb]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 14,
+        "covered": true
+      },
+      "yum_package[timescaledb]": {
+        "name": "yum_package[timescaledb]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 21,
+        "covered": true
+      },
+      "execute[create_timescale_extension]": {
+        "name": "execute[create_timescale_extension]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 39,
+        "covered": true
+      },
+      "execute[restart_postgresql]": {
+        "name": "execute[restart_postgresql]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 47,
+        "covered": true
+      },
+      "directory[/opt/prometheus/node_exporter]": {
+        "name": "directory[/opt/prometheus/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/var/log/node_exporter]": {
+        "name": "directory[/var/log/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 12,
+        "covered": true
+      },
+      "yum_package[glibc-static]": {
+        "name": "yum_package[glibc-static]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 25,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-8oyis7/node_exporter-0.15.2.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-8oyis7/node_exporter-0.15.2.tar.gz]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 31,
+        "covered": true
+      },
+      "execute[install_node_exporter]": {
+        "name": "execute[install_node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 39,
+        "covered": false
+      },
+      "template[/etc/init.d/node_exporter]": {
+        "name": "template[/etc/init.d/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 48,
+        "covered": true
+      },
+      "service[node_exporter]": {
+        "name": "service[node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 56,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1omm4dy/node_exporter-0.15.2.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1omm4dy/node_exporter-0.15.2.tar.gz]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 31,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-dmjqc/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-dmjqc/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1i6wxyt/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-1i6wxyt/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": true
+      }
+    },
+    "covered": {
+      "directory[/opt/prometheus/alertmanager]": {
+        "name": "directory[/opt/prometheus/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/opt/prometheus/alertmanager/data]": {
+        "name": "directory[/opt/prometheus/alertmanager/data]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 12,
+        "covered": true
+      },
+      "directory[/var/log/alertmanager]": {
+        "name": "directory[/var/log/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 19,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-scg0gy/alertmanager-0.14.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-scg0gy/alertmanager-0.14.0.tar.gz]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 34,
+        "covered": true
+      },
+      "template[/opt/prometheus/alertmanager/config.yml]": {
+        "name": "template[/opt/prometheus/alertmanager/config.yml]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 51,
+        "covered": true
+      },
+      "template[/etc/init.d/alertmanager]": {
+        "name": "template[/etc/init.d/alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 62,
+        "covered": true
+      },
+      "service[alertmanager]": {
+        "name": "service[alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 70,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1p4smxu/alertmanager-0.14.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1p4smxu/alertmanager-0.14.0.tar.gz]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 34,
+        "covered": true
+      },
+      "directory[/opt/prometheus/apache_exporter]": {
+        "name": "directory[/opt/prometheus/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/var/log/apache_exporter]": {
+        "name": "directory[/var/log/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 12,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-11aovc2/apache_exporter-0.5.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-11aovc2/apache_exporter-0.5.0.tar.gz]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 27,
+        "covered": true
+      },
+      "template[/etc/init.d/apache_exporter]": {
+        "name": "template[/etc/init.d/apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 44,
+        "covered": true
+      },
+      "service[apache_exporter]": {
+        "name": "service[apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 52,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-141cxgp/apache_exporter-0.5.0.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-141cxgp/apache_exporter-0.5.0.tar.gz]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 27,
+        "covered": true
+      },
+      "directory[/var/log/postgresql_adapter]": {
+        "name": "directory[/var/log/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 6,
+        "covered": true
+      },
+      "cookbook_file[/opt/prometheus/database/postgresql_adapter]": {
+        "name": "cookbook_file[/opt/prometheus/database/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 21,
+        "covered": true
+      },
+      "template[/etc/init.d/postgresql_adapter]": {
+        "name": "template[/etc/init.d/postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 30,
+        "covered": true
+      },
+      "service[postgresql_adapter]": {
+        "name": "service[postgresql_adapter]",
+        "source": "chef-prometheus/recipes/configure_postgresql_adapter.rb",
+        "line": 41,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1fgt4lc/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1fgt4lc/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "yum_package[postgresql10-devel, gcc]": {
+        "name": "yum_package[postgresql10-devel, gcc]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 15,
+        "covered": true
+      },
+      "execute[uncompress_extension]": {
+        "name": "execute[uncompress_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 21,
+        "covered": true
+      },
+      "bash[make_extension]": {
+        "name": "bash[make_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 31,
+        "covered": true
+      },
+      "execute[install_extension]": {
+        "name": "execute[install_extension]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 45,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-exkzf7/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-exkzf7/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "directory[/opt/prometheus/database]": {
+        "name": "directory[/opt/prometheus/database]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 6,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-rp9wu8/postgresql-10.3.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-rp9wu8/postgresql-10.3.rpm]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 15,
+        "covered": true
+      },
+      "rpm_package[postgresql10-server]": {
+        "name": "rpm_package[postgresql10-server]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 22,
+        "covered": true
+      },
+      "yum_package[postgresql10-server]": {
+        "name": "yum_package[postgresql10-server]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 28,
+        "covered": true
+      },
+      "execute[setup_postgresql]": {
+        "name": "execute[setup_postgresql]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 34,
+        "covered": true
+      },
+      "execute[create_prometheus_user]": {
+        "name": "execute[create_prometheus_user]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 43,
+        "covered": true
+      },
+      "template[/var/lib/pgsql/10/data/postgresql.conf]": {
+        "name": "template[/var/lib/pgsql/10/data/postgresql.conf]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 63,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-rp9wu8/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-rp9wu8/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": true
+      },
+      "service[postgresql-10]": {
+        "name": "service[postgresql-10]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 93,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/postgresql-10.3.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/postgresql-10.3.rpm]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 15,
+        "covered": true
+      },
+      "rpm_package[timescaledb]": {
+        "name": "rpm_package[timescaledb]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 14,
+        "covered": true
+      },
+      "yum_package[timescaledb]": {
+        "name": "yum_package[timescaledb]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 21,
+        "covered": true
+      },
+      "execute[create_timescale_extension]": {
+        "name": "execute[create_timescale_extension]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 39,
+        "covered": true
+      },
+      "execute[restart_postgresql]": {
+        "name": "execute[restart_postgresql]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 47,
+        "covered": true
+      },
+      "directory[/opt/prometheus/node_exporter]": {
+        "name": "directory[/opt/prometheus/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 5,
+        "covered": true
+      },
+      "directory[/var/log/node_exporter]": {
+        "name": "directory[/var/log/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 12,
+        "covered": true
+      },
+      "yum_package[glibc-static]": {
+        "name": "yum_package[glibc-static]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 25,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-8oyis7/node_exporter-0.15.2.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-8oyis7/node_exporter-0.15.2.tar.gz]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 31,
+        "covered": true
+      },
+      "template[/etc/init.d/node_exporter]": {
+        "name": "template[/etc/init.d/node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 48,
+        "covered": true
+      },
+      "service[node_exporter]": {
+        "name": "service[node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 56,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1omm4dy/node_exporter-0.15.2.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-1omm4dy/node_exporter-0.15.2.tar.gz]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 31,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-dmjqc/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-dmjqc/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": true
+      },
+      "remote_file[/tmp/d20180808-12777-1i6wxyt/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-1i6wxyt/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": true
+      }
+    },
+    "uncovered": {
+      "execute[install_alertmanager]": {
+        "name": "execute[install_alertmanager]",
+        "source": "chef-prometheus/recipes/alertmanager.rb",
+        "line": 42,
+        "covered": false
+      },
+      "execute[install_apache_exporter]": {
+        "name": "execute[install_apache_exporter]",
+        "source": "chef-prometheus/recipes/apache_exporter.rb",
+        "line": 35,
+        "covered": false
+      },
+      "template[/var/lib/pgsql/10/data/pg_hba.conf]": {
+        "name": "template[/var/lib/pgsql/10/data/pg_hba.conf]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 54,
+        "covered": false
+      },
+      "execute[create_database_prometheus]": {
+        "name": "execute[create_database_prometheus]",
+        "source": "chef-prometheus/recipes/database.rb",
+        "line": 74,
+        "covered": false
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/pg_prometheus-0.1.tar.gz]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/pg_prometheus-0.1.tar.gz]",
+        "source": "chef-prometheus/recipes/configure_postgresql_extension.rb",
+        "line": 8,
+        "covered": false
+      },
+      "remote_file[/tmp/d20180808-12777-va5jp7/timescaledb-0.9.1.rpm]": {
+        "name": "remote_file[/tmp/d20180808-12777-va5jp7/timescaledb-0.9.1.rpm]",
+        "source": "chef-prometheus/recipes/timescaledb.rb",
+        "line": 7,
+        "covered": false
+      },
+      "execute[install_node_exporter]": {
+        "name": "execute[install_node_exporter]",
+        "source": "chef-prometheus/recipes/node_exporter.rb",
+        "line": 39,
+        "covered": false
+      }
+    }
+  },
+  "totals": {
+    "resources": 54,
+    "covered": 47,
+    "uncovered": 7,
+    "percent": 87.04
+  }
+}
