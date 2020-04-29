@@ -20,11 +20,7 @@ jobs:
     name: Merge
     steps:
     - name: Integration check
-      uses: squalrus/merge-bot@v0.2.0
+      uses: lots0logs/gh-action-auto-merge@v1.0.0
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         test: true
-        labels: ready, merge
-        blocking-labels: do not merge
-        checks: true
-        method: squash
