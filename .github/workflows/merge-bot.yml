@@ -18,7 +18,7 @@ jobs:
     name: Merge
     steps:
     - name: Automatic Merge
-      uses: lots0logs/gh-action-auto-merge@1.0.0
+      uses: yvelasqu/gh-actions@1.0.0
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
