@@ -49,7 +49,6 @@ foodcritic: run foodcritic lint
 chefspec: run the unit tests suite
 check: execute all the previous targets
 
-
 ## Notes
 
 * Cookbook one is not public. This cookbook is used to load a library "get_site()" and identify the datacenter of the server.
