@@ -1,14 +1,19 @@
-name: Merge Bot
+name: 'Merge command'
 
 on: issue_comment
 
 jobs:
-  merge:
-    runs-on: ubuntu-latest
-    name: Merge
-    steps:
-    - name: Automatic Merge
-      uses: yvelasqu/gh-actions@1.0.0
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  merge-command:
 
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Merge command
+      uses: Goobles/gh-actions-merge-command@v1
+      with:
+        allow_ff: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
