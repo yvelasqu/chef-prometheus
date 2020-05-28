@@ -7,6 +7,7 @@ on:
 jobs:
   job1:
     if: github.event.schedule == '*/5 * * * *'
+    runs-on: ubuntu-latest
     steps:
       - name: Get current day
         uses: 1466587594/get-current-time@v1
