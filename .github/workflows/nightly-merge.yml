@@ -1,31 +1,16 @@
-name: Merge Bot
+name: AutoMerge
 
 on:
-  pull_request:
-    types:
-      - labeled
-      - ready_for_review
-      - review_request_removed
-      - review_requested
-      - synchronize
-      - unlabeled
-  pull_request_review:
-    types:
-      - dismissed
-      - submitted
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
-  merge:
+  automerge:
     runs-on: ubuntu-latest
-    name: Merge
-    steps:
-    - name: Integration check
-      uses: squalrus/merge-bot@v0.2.0
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        test: true
-        reviewers: false
-        labels: ready, merge
-        blocking-labels: do not merge
-        checks: true
-        method: squash
+    steps: 
+      - name: automerge
+        uses: pascalgn/automerge-action@v0.8.3
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "automerge"
+          MERGE_DELETE_BRANCH: true
