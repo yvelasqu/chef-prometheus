@@ -14,6 +14,9 @@ jobs:
         id: current-time
         with:
           format: YYYY-MM-DD
+      - name: Set ENV
+        run: |
+          echo "::set-env name=LABELS::${{ steps.current-time.outputs.formattedTime }},lala"
       - name: Merge if follow conditions
         uses: pascalgn/automerge-action@v0.8.3
         env:
