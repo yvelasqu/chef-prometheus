@@ -15,9 +15,14 @@ jobs:
         env:
           TIME: "${{ steps.current-time.outputs.time }}"
         run: echo $TIME
-      - name: automerge
-        uses: pascalgn/automerge-action@v0.8.3
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "automerge"
-          MERGE_DELETE_BRANCH: true
+    steps:
+      - name: list labels
+        run: |
+        array = ${{ github.event.pull_request.labels }}
+        echo "${array[*]}"
+#      - name: automerge
+#        uses: pascalgn/automerge-action@v0.8.3
+#        env:
+#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+#          MERGE_LABELS: "automerge"
+#          MERGE_DELETE_BRANCH: true
