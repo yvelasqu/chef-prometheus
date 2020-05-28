@@ -5,19 +5,21 @@ on:
     - cron: '*/5 * * * *'
 
 jobs:
-  automerge:
-    runs-on: ubuntu-latest
+  job1:
+    if: github.event.schedule == '*/5 * * * *'
     steps:
-      - name: Get current time
+      - name: Get current day
         uses: 1466587594/get-current-time@v1
         id: current-time
         with:
           format: YYYY-MM-DD
-      - name: Use current time
+      - name: Merge if follow conditions
+        uses: pascalgn/automerge-action@v0.8.3
         env:
-          TIME: "${{ steps.current-time.outputs.time }}"
-          F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
-        run: echo $TIME $F_TIME
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "automerge,*/5 * * * *"
+          MERGE_DELETE_BRANCH: true
+        if: contains( github.event.pull_request.labels.*.name, "${{ steps.current-time.outputs.formattedTime }}")
     
 #      - name: automerge
 #        uses: pascalgn/automerge-action@v0.8.3
