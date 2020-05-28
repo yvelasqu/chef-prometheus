@@ -15,14 +15,14 @@ jobs:
         with:
           format: YYYY-MM-DD
       - name: Set ENV
+        id: current-env
         run: |
           echo "::set-env name=LABELS::${{ steps.current-time.outputs.formattedTime }},lala"
       - name: Merge if follow conditions
         uses: pascalgn/automerge-action@v0.8.3
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          LABELS: 'automerge,*/5 * * * *,"${{ env.F_TIME }}"' 
-          MERGE_LABELS: "${{ env.LABELS }}"
+          MERGE_LABELS: "${{ steps.current-env.outputs.LABELS }}"
           MERGE_DELETE_BRANCH: true
           F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
         #if: contains( toJson(github), '2020-05-28' )
