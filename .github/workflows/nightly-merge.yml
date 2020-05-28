@@ -15,7 +15,6 @@ jobs:
         env:
           TIME: "${{ steps.current-time.outputs.time }}"
         run: echo $TIME
-    steps:
       - name: list labels
         run: |
         array = ${{ github.event.pull_request.labels }}
