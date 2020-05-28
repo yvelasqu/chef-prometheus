@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - steps:
-          - name: Get current time
-            uses: gerred/actions/current-time@master
-            id: current-time
-          - name: Use current time
-            env:
-            TIME: "${{ steps.current-time.outputs.time }}"
-            run: echo $TIME
+      - name: Get current time
+        uses: gerred/actions/current-time@master
+        id: current-time
+      - name: Use current time
+        env:
+        TIME: "${{ steps.current-time.outputs.time }}"
+        run: echo $TIME
       - name: automerge
         uses: pascalgn/automerge-action@v0.8.3
         env:
