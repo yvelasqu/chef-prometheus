@@ -20,7 +20,7 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "automerge,*/5 * * * *"
           MERGE_DELETE_BRANCH: true
-        if: contains( github.event.pull_request.labels.*.name, "${{ steps.current-time.outputs.formattedTime }}")
+        if: contains( github.event.pull_request.labels.*.name, steps.current-time.outputs.formattedTime )
     
 #      - name: automerge
 #        uses: pascalgn/automerge-action@v0.8.3
