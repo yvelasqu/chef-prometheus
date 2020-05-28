@@ -21,8 +21,8 @@ jobs:
           MERGE_LABELS: "automerge,*/5 * * * *"
           MERGE_DELETE_BRANCH: true
           F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
-        #if: contains( toJson(github), env.F_TIME )
-        if: contains( github.event.pull_request.labels.*.name, env.F_TIME )
+        if: contains( toJson(github), env.F_TIME )
+        #if: contains( github.event.pull_request.labels.*.name, env.F_TIME )
     
 #      - name: automerge
 #        uses: pascalgn/automerge-action@v0.8.3
