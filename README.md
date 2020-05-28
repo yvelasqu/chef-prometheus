@@ -1,7 +1,3 @@
-
-
-
-
 # Prometheus Cookbook (chef-prometheus)
 
 You can use this cookbook only to take as reference to create your own cookbook.
