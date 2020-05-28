@@ -17,12 +17,12 @@ jobs:
       - name: Set ENV
         id: current-env
         run: |
-          echo "::set-env name=LABELS::${{ steps.current-time.outputs.formattedTime }},lala"
+          echo "::set-output name=labels::${{ steps.current-time.outputs.formattedTime }},lala"
       - name: Merge if follow conditions
         uses: pascalgn/automerge-action@v0.8.3
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "${{ steps.current-env.outputs.LABELS }}"
+          MERGE_LABELS: "${{ steps.current-env.outputs.labels }}"
           MERGE_DELETE_BRANCH: true
           F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
         #if: contains( toJson(github), '2020-05-28' )
