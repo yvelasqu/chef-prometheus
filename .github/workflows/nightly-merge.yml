@@ -17,8 +17,8 @@ jobs:
         run: echo $TIME
       - name: list labels
         run: |
-        array = ${{ github.event.pull_request.labels }}
-        echo "${array[*]}"
+          array = ${{ github.event.pull_request.labels }}
+          echo "${array[*]}"
 #      - name: automerge
 #        uses: pascalgn/automerge-action@v0.8.3
 #        env:
