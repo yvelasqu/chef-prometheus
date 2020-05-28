@@ -17,7 +17,7 @@ jobs:
       - name: Set ENV
         id: current-env
         run: |
-          echo "::set-output name=labels::${{ steps.current-time.outputs.formattedTime }},lala"
+          echo "::set-output name=labels::${{ steps.current-time.outputs.formattedTime }},automerge,${{ github.event.schedule }}"
       - name: Merge if follow conditions
         uses: pascalgn/automerge-action@v0.8.3
         env:
