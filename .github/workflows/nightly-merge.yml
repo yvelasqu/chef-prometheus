@@ -18,7 +18,7 @@ jobs:
         uses: pascalgn/automerge-action@v0.8.3
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          LABELS: "automerge,*/5 * * * *,${{ env.F_TIME }}" 
+          LABELS: 'automerge,*/5 * * * *,"${{ env.F_TIME }}"' 
           MERGE_LABELS: "${{ env.LABELS }}"
           MERGE_DELETE_BRANCH: true
           F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
