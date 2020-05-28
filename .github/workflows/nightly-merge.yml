@@ -18,10 +18,10 @@ jobs:
         uses: pascalgn/automerge-action@v0.8.3
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "automerge,*/5 * * * *"
+          MERGE_LABELS: "automerge,*/5 * * * *,env.F_TIME"
           MERGE_DELETE_BRANCH: true
           F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
-        if: contains( toJson(github), '2020-05-28' )
+        #if: contains( toJson(github), '2020-05-28' )
         #if: contains( github.event.pull_request.labels.*.name, '2020-05-28' )
     
 #      - name: automerge
