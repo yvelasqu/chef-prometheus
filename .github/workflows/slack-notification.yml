@@ -1,0 +1,14 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      # Push events on master branch
+      - master
+      # Push events to branches matching refs/heads/mona/octocat
+      - 'mona/octocat'
+      # Push events to branches matching refs/heads/releases/10
+      - 'releases/**'
+    # Sequence of patterns matched against refs/tags
+    tags:        
+      - v1             # Push events to v1 tag
+      - v1.* 
