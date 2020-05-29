@@ -25,3 +25,50 @@ jobs:
 #          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 #          MERGE_LABELS: "automerge"
 #          MERGE_DELETE_BRANCH: true
+
+#      - name: Get current time
+#        uses: gerred/actions/current-time@master
+#        id: current-time
+#      - name: Use current time
+#        env:
+#          TIME: "${{ steps.current-time.outputs.time }}"
+#        run: echo $TIME
+#      - name: list labels
+#        run: |
+#          array = ${{ github.event.pull_request.labels }}
+#          echo "${array[*]}"
+
+schedule:
+  - cron: '*/5 * * * *'
+  - cron: '20 21 * * *'
+
+jobs:
+  job1:
+    if: github.event.schedule == '*/5 * * * *'
+    steps:
+      - name: Get current day
+        uses: 1466587594/get-current-time@v1
+        id: current-time
+        with:
+          format: YYYY-MM-DD
+      - name: Merge if follow conditions
+        uses: pascalgn/automerge-action@v0.8.3
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "automerge,*/5 * * * *"
+          MERGE_DELETE_BRANCH: true
+        if: contains( github.event.pull_request.labels.*.name, "${{ steps.current-time.outputs.formattedTime }}")
+  
+  job2: github.event.schedule == '20 21 * * *'
+      - name: Get current day
+        uses: 1466587594/get-current-time@v1
+        id: current-time
+        with:
+          format: YYYY-MM-DD
+      - name: Merge if follow conditions
+        uses: pascalgn/automerge-action@v0.8.3
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "automerge,*/5 * * * *"
+          MERGE_DELETE_BRANCH: true
+        if: contains( github.event.pull_request.labels.*.name, "${{ steps.current-time.outputs.formattedTime }}")
