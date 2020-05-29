@@ -5,20 +5,29 @@ on:
     - cron: '*/5 * * * *'
 
 jobs:
-  automerge:
+  job1:
+    if: github.event.schedule == '*/5 * * * *'
     runs-on: ubuntu-latest
     steps:
-      - name: Get current time
-        uses: gerred/actions/current-time@master
+      - name: Get current day
+        uses: 1466587594/get-current-time@v1
         id: current-time
-      - name: Use current time
-        env:
-          TIME: "${{ steps.current-time.outputs.time }}"
-        run: echo $TIME
-      - name: list labels
+        with:
+          format: YYYYMMDD
+      - name: Set ENV
+        id: current-env
         run: |
-          array = ${{ github.event.pull_request.labels }}
-          echo "${array[*]}"
+          echo "::set-output name=labels::${{ steps.current-time.outputs.formattedTime }},automerge,${{ github.event.schedule }}"
+      - name: Merge if follow conditions
+        uses: pascalgn/automerge-action@v0.8.3
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "${{ steps.current-env.outputs.labels }}"
+          MERGE_DELETE_BRANCH: true
+          F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
+        #if: contains( toJson(github), '2020-05-28' )
+        #if: contains( github.event.pull_request.labels.*.name, '2020-05-28' )
+    
 #      - name: automerge
 #        uses: pascalgn/automerge-action@v0.8.3
 #        env:
