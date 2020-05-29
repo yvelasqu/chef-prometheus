@@ -4,11 +4,15 @@ on:
     branches:    
       # Push events on master branch
       - master
-      # Push events to branches matching refs/heads/mona/octocat
-      - 'mona/octocat'
-      # Push events to branches matching refs/heads/releases/10
-      - 'releases/**'
-    # Sequence of patterns matched against refs/tags
-    tags:        
-      - v1             # Push events to v1 tag
-      - v1.* 
+jobs:
+ slack:
+    if: github.event.label.name == 'automerge'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2.0.2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: "test"
+ 
