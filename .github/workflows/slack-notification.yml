@@ -10,6 +10,10 @@ jobs:
     steps:
     - name: Extract Branch Name
       run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
+    - name: event GITHUB_EVENT_PATH
+      run: echo $GITHUB_EVENT_PATH
+    - name: ECHO ENV
+      run: echo ::set-env name=pull_number::$(jq — raw-output .pull_request.number $GITHUB_EVENT_PATH)
  
  slack:
     if: startsWith(github.ref, 'refs/tags/automerge')
