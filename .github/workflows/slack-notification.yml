@@ -5,6 +5,12 @@ on:
       # Push events on master branch
       - master
 jobs:
+ preslack:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Extract Branch Name
+      run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
+ 
  slack:
     if: startsWith(github.ref, 'refs/tags/automerge')
     runs-on: ubuntu-latest
