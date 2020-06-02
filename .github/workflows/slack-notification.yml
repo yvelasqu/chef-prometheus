@@ -17,3 +17,18 @@ jobs:
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
+  slack:
+    if: contains(github.event.path, 'lala12345')
+    runs-on: ubuntu-latest
+    steps:
+    - name: Extract Branch Name
+      run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2.0.2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: "test :rocket: "
+        SLACK_TITLE: Post Title
+        SLACK_CHANNEL: test-pr-test
+ 
