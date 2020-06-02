@@ -24,6 +24,7 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "${{ steps.current-env.outputs.labels }}"
           MERGE_DELETE_BRANCH: true
+          MERGE_COMMIT_MESSAGE: "Merged-with-githubaction"
           F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
         #if: contains( toJson(github), '2020-05-28' )
         #if: contains( github.event.pull_request.labels.*.name, '2020-05-28' )
