@@ -1,9 +1,7 @@
 on:
-  push:
+  pull_request:
     # Sequence of patterns matched against refs/heads
-    branches:    
-      # Push events on master branch
-      - master
+    types: [closed]
 
 jobs:
   show-env:
