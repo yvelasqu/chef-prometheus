@@ -1,8 +1,7 @@
 name: AutoMerge
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  push
 
 jobs:
   job1:
