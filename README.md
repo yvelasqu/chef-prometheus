@@ -5,6 +5,7 @@ This is a Chef cookbook to manage Prometheus and its exporters.
 For documentation, examples and guides around Prometheus, visit prometheus.io.
 
 ### Supported Versions
+
 * Prometheus - version 2.1.0
 * AlertManager - version 0.14.0
 * Node Exporter - version 0.15.2
