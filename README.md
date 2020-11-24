@@ -4,13 +4,6 @@ You can use this cookbook only to take as reference to create your own cookbook.
 This is a Chef cookbook to manage Prometheus and its exporters.
 For documentation, examples and guides around Prometheus, visit prometheus.io.
 
-### Supported Versions
-
-* Prometheus - version 2.1.0
-* AlertManager - version 0.14.0
-* Node Exporter - version 0.15.2
-
-### Cookbook Dependencies
 
 * one - version 0.1.4 or newer
 * ulimit - version 0.4.0 or newer
