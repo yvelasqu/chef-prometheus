@@ -1,5 +1,4 @@
 # Prometheus Cookbook (chef-prometheus)
-
 You can use this cookbook only to take as reference to create your own cookbook.
 This is a Chef cookbook to manage Prometheus and its exporters.
 For documentation, examples and guides around Prometheus, visit prometheus.io.
